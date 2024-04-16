@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://hkkggwh13547"]
+
+[ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_kdsd1"]
+[ext_resource type="Texture2D" uid="uid://cl8xloyes1mf6" path="res://assets/sprites/Archer_Blue.png" id="2_hwpgf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eh71s"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1c8d"]
+radius = 19.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(560, 330)
+script = ExtResource("1_kdsd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hwpgf")
+hframes = 8
+vframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_eh71s")
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(0, 40)
+shape = SubResource("CircleShape2D_p1c8d")

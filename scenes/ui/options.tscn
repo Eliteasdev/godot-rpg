@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://cibib1a7u6bb2"]
+
+[ext_resource type="Theme" uid="uid://bganspv3g4f4s" path="res://themes/main.tres" id="1_4gk35"]
+[ext_resource type="PackedScene" uid="uid://bw66olsirh57p" path="res://scenes/ui/components/volume_control.tscn" id="2_ggbrm"]
+[ext_resource type="Texture2D" uid="uid://qbtg4kmxalip" path="res://assets/textures/images/Background.png" id="2_tgoim"]
+[ext_resource type="Script" path="res://assets/scripts/options.gd" id="2_vy2dp"]
+
+[node name="Options" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4gk35")
+script = ExtResource("2_vy2dp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tgoim")
+stretch_mode = 2
+
+[node name="Main" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+alignment = 1
+
+[node name="Main" type="VFlowContainer" parent="Main/HFlowContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="Main/HFlowContainer/Main"]
+layout_mode = 2
+text = "Volumen general"
+
+[node name="VolumeControl" parent="Main/HFlowContainer/Main" instance=ExtResource("2_ggbrm")]
+clip_contents = true
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme = ExtResource("1_4gk35")
+bus_name = "Master"
+
+[node name="Music" type="VFlowContainer" parent="Main/HFlowContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="Main/HFlowContainer/Music"]
+layout_mode = 2
+text = "Musica"
+
+[node name="VolumeControl" parent="Main/HFlowContainer/Music" instance=ExtResource("2_ggbrm")]
+clip_contents = true
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme = ExtResource("1_4gk35")
+bus_name = "music"
+
+[node name="Sfx" type="VFlowContainer" parent="Main/HFlowContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="Main/HFlowContainer/Sfx"]
+layout_mode = 2
+text = "Sfx"
+
+[node name="VolumeControl" parent="Main/HFlowContainer/Sfx" instance=ExtResource("2_ggbrm")]
+clip_contents = true
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme = ExtResource("1_4gk35")
+bus_name = "sfx"
+
+[node name="Button" type="Button" parent="Main/HFlowContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 0
+text = "Atras"
+
+[connection signal="pressed" from="Main/HFlowContainer/Button" to="." method="_on_button_pressed"]

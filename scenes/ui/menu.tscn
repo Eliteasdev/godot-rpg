@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://chlbvumn52r41"]
+
+[ext_resource type="Theme" uid="uid://bganspv3g4f4s" path="res://themes/main.tres" id="1_0iol0"]
+[ext_resource type="Script" path="res://assets/scripts/menu.gd" id="2_tit30"]
+[ext_resource type="FontFile" uid="uid://bao51ry0058v3" path="res://assets/fonts/DungeonFont.ttf" id="3_5x3s5"]
+[ext_resource type="PackedScene" uid="uid://cibib1a7u6bb2" path="res://scenes/ui/options.tscn" id="4_80wd2"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0iol0")
+script = ExtResource("2_tit30")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="Title" type="VBoxContainer" parent="MarginContainer/Main"]
+layout_mode = 2
+
+[node name="Title_1" type="Label" parent="MarginContainer/Main/Title"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65098, 0.423529, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_5x3s5")
+theme_override_font_sizes/font_size = 120
+text = "Tiny Swords"
+
+[node name="Title_2" type="Label" parent="MarginContainer/Main/Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_5x3s5")
+theme_override_font_sizes/font_size = 60
+text = "by Elite as Dev"
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/Main"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Start" type="Button" parent="MarginContainer/Main/Buttons"]
+layout_mode = 2
+text = "Comenzar"
+
+[node name="Options" type="Button" parent="MarginContainer/Main/Buttons"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="Exit" type="Button" parent="MarginContainer/Main/Buttons"]
+layout_mode = 2
+text = "Salir"
+
+[node name="Copyright" type="Label" parent="MarginContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_5x3s5")
+theme_override_font_sizes/font_size = 30
+text = "© EliteasDev All Rights Reserved"
+
+[node name="Options" parent="." instance=ExtResource("4_80wd2")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[connection signal="pressed" from="MarginContainer/Main/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/Main/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/Main/Buttons/Exit" to="." method="_on_exit_pressed"]

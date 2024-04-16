@@ -1,0 +1,10 @@
+~ start
+
+NPC: [[Hey!|Hola,]] La puerta de la aldea ha sido cerrada
+NPC: ¿Qué te trae por aquí?
+- Quiero crear un nuevo mundo
+	NPC: ...¿Qué clase de mundo?
+- Nada
+	NPC: Sigue caminando
+
+=> END

@@ -1,0 +1,107 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bganspv3g4f4s"]
+
+[ext_resource type="FontFile" uid="uid://bao51ry0058v3" path="res://assets/fonts/DungeonFont.ttf" id="1_nodjr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muqni"]
+content_margin_left = 5.0
+bg_color = Color(0.231373, 0.513726, 0.658824, 1)
+border_width_bottom = 16
+border_color = Color(0.12549, 0.313726, 0.411765, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+shadow_size = 3
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn0jo"]
+content_margin_left = 5.0
+bg_color = Color(0.329412, 0.639216, 0.803922, 1)
+border_width_bottom = 16
+border_color = Color(0.12549, 0.313726, 0.411765, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+shadow_size = 3
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmgb5"]
+content_margin_left = 5.0
+bg_color = Color(0.231373, 0.513726, 0.658824, 1)
+border_width_bottom = 16
+border_color = Color(0.12549, 0.313726, 0.411765, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+shadow_size = 3
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jski"]
+bg_color = Color(0.231373, 0.513726, 0.658824, 1)
+border_width_bottom = 2
+border_color = Color(0.12549, 0.313726, 0.411765, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gknk"]
+bg_color = Color(0.231373, 0.513726, 0.658824, 1)
+border_width_bottom = 2
+border_color = Color(0.12549, 0.313726, 0.411765, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4wwv"]
+bg_color = Color(0.12549, 0.313726, 0.411765, 1)
+border_width_bottom = 2
+border_color = Color(0.0313726, 0.12549, 0.172549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[resource]
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_nodjr")
+Button/styles/hover = SubResource("StyleBoxFlat_muqni")
+Button/styles/normal = SubResource("StyleBoxFlat_sn0jo")
+Button/styles/pressed = SubResource("StyleBoxFlat_rmgb5")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_3jski")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2gknk")
+HSlider/styles/slider = SubResource("StyleBoxFlat_n4wwv")
+Label/font_sizes/font_size = 60
+Label/fonts/font = ExtResource("1_nodjr")
+RichTextLabel/fonts/bold_font = ExtResource("1_nodjr")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_nodjr")
+RichTextLabel/fonts/italics_font = ExtResource("1_nodjr")
+RichTextLabel/fonts/mono_font = ExtResource("1_nodjr")
+RichTextLabel/fonts/normal_font = ExtResource("1_nodjr")

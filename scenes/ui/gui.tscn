@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://r1v88u5ar7v1"]
+
+[ext_resource type="Theme" uid="uid://bganspv3g4f4s" path="res://themes/main.tres" id="1_m5oli"]
+[ext_resource type="Script" path="res://assets/scripts/gui.gd" id="2_owemm"]
+
+[node name="Gui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_m5oli")
+script = ExtResource("2_owemm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="Coins" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.713726, 0.529412, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 6
+text = "10"
